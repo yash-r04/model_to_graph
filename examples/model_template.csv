@@ -1,0 +1,7 @@
+layer,op,in_shape,out_shape,kernel,stride,groups,dtype,weight_shape,inputs
+conv1,Conv,1x3x224x224,1x64x112x112,7x7,2x2,1,fp32,64x3x7x7,
+relu1,Relu,1x64x112x112,1x64x112x112,,,,fp32,,conv1
+pool1,MaxPool,1x64x112x112,1x64x56x56,3x3,2x2,,fp32,,relu1
+conv2,Conv,1x64x56x56,1x64x56x56,3x3,1x1,1,fp32,64x64x3x3,pool1
+add,Add,1x64x56x56,1x64x56x56,,,,fp32,,conv2;pool1
+fc,Gemm,1x64,1x1000,,,,fp32,64x1000,add

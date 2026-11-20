@@ -1,0 +1,9 @@
+onnx
+numpy
+pandas
+networkx
+plotly
+pyyaml
+openpyxl
+tflite   # only if you analyze .tflite files
+# system: graphviz (the `dot` binary) for the DAG picture:  apt install graphviz / brew install graphviz

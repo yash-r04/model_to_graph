@@ -1,0 +1,7 @@
+layer,op,in_shape,out_shape,kernel,stride,groups,dtype,weight_shape,inputs
+conv,Conv,1x3x8x8,1x4x8x8,3x3,1x1,1,fp32,4x3x3x3,
+relu,Relu,1x4x8x8,1x4x8x8,,,,fp32,,
+dw,Conv,1x4x8x8,1x4x8x8,3x3,1x1,4,fp32,4x1x3x3,
+flatten,Reshape,1x4x8x8,1x256,,,,fp32,,
+fc,Gemm,1x256,1x10,,,,fp32,10x256,
+softmax,Softmax,1x10,1x10,,,,fp32,,

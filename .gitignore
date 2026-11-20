@@ -1,0 +1,12 @@
+# Python bytecode
+__pycache__/
+*.pyc
+
+# Large model files
+*.onnx.data
+mobilenet_v2.onnx
+resnet50.onnx
+vit_b_16.onnx
+
+# Generated outputs
+out/
